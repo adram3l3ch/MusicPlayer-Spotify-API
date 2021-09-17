@@ -1,5 +1,8 @@
 .sidebar {
   background-color: aqua;
+  position: absolute;
+  top: 0;
+  bottom: 70px;
   width: 70px;
   background-color: var(--secondary);
   display: -webkit-box;

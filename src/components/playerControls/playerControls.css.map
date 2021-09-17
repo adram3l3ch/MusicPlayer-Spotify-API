@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,eAAe,CAAC;EACf,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,MAAM,EAAE,MAAM;CAWd;;AAdD,AAKC,eALc,CAKd,GAAG,CAAC;EACH,SAAS,EAAE,MAAM;EACjB,MAAM,EAAE,OAAO;CACf;;AARF,AASC,eATc,CASd,GAAG,AAAA,UAAW,CAAA,CAAC,EAAE;EAChB,SAAS,EAAE,IAAI;EACf,KAAK,EAAE,aAAa;EACpB,MAAM,EAAE,MAAM;CACd",
+    "sources": [
+        "playerControls.scss"
+    ],
+    "names": [],
+    "file": "playerControls.css"
+}

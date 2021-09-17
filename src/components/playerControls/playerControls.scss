@@ -1,0 +1,15 @@
+.playerControls {
+	display: flex;
+	align-items: center;
+	margin: 0 50px;
+
+	svg {
+		font-size: 2.5rem;
+		cursor: pointer;
+	}
+	svg:nth-child(2) {
+		font-size: 3rem;
+		color: var(--accent);
+		margin: 0 20px;
+	}
+}

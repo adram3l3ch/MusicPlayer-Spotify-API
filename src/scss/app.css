@@ -1,10 +1,5 @@
 .app {
   height: 100vh;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 50px 1fr;
-      grid-template-columns: 50px 1fr;
-  -ms-grid-rows: 1fr 50px;
-      grid-template-rows: 1fr 50px;
+  position: relative;
 }
 /*# sourceMappingURL=app.css.map */
