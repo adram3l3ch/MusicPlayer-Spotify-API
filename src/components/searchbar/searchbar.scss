@@ -1,0 +1,23 @@
+.searchbar {
+	width: 300px;
+	// height: 50px;
+	border: 2px solid var(--neutral);
+	border-radius: 50px;
+	padding: 0.5em 1em;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	svg {
+		font-size: 1.2rem;
+	}
+
+	input {
+		height: inherit;
+		flex: 1;
+		background: none;
+		border: none;
+		outline: none;
+		color: inherit;
+	}
+}

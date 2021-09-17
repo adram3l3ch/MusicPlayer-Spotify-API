@@ -1,0 +1,30 @@
+.login {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	color: var(--neutral);
+	justify-content: center;
+	align-items: center;
+	background-color: var(--primary);
+
+	h1 {
+		margin-bottom: 50px;
+	}
+
+	button,
+	a {
+		text-decoration: none;
+		border: none;
+		outline: none;
+		color: var(--primary);
+	}
+
+	button {
+		padding: 1em 2em;
+		border-radius: 50px;
+		background-color: var(--accent);
+		font-weight: 600;
+		cursor: pointer;
+		text-transform: uppercase;
+	}
+}

@@ -1,0 +1,31 @@
+.user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user svg {
+  width: 45px;
+  height: 45px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+}
+
+.user__info {
+  margin-left: 10px;
+}
+
+.user__info p {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 2px;
+  padding-left: 2px;
+}
+
+.user__info h3 {
+  font-weight: 600;
+}
+/*# sourceMappingURL=user.css.map */

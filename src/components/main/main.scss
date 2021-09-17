@@ -1,0 +1,13 @@
+.main {
+	width: 100%;
+	padding: 50px 20px 70px 100px;
+	color: aliceblue;
+	height: 100vh;
+	background-color: var(--primary);
+
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
