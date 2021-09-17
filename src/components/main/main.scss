@@ -9,5 +9,19 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		margin-bottom: 30px;
+	}
+
+	&__bottom {
+		height: calc(100% - 80px);
+		overflow: auto;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		& > * {
+			margin: 50px 0;
+		}
 	}
 }

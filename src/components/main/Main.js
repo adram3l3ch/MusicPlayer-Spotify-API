@@ -1,5 +1,6 @@
 import React from "react";
 import HomeQueue from "../homeQueue/HomeQueue";
+import HomeSection from "../homeSection/HomeSection";
 import Searchbar from "../searchbar/Searchbar";
 import User from "../user/User";
 import "./main.css";
@@ -11,8 +12,12 @@ const Main = () => {
 				<Searchbar />
 				<User />
 			</div>
-			<div className="mian__bottom">
+			<div className="main__bottom">
 				<HomeQueue />
+				<HomeSection title="MADE FOR YOU" />
+				<HomeSection title="RECENT" />
+				<HomeSection title="MADE FOR YOU" />
+				<HomeSection title="MADE FOR YOU" />
 			</div>
 		</div>
 	);

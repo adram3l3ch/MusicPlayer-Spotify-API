@@ -1,0 +1,18 @@
+.homeSection__cards {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.homeSection__cards::-webkit-scrollbar {
+  display: none;
+}
+
+h2 {
+  padding-left: 10px;
+}
+/*# sourceMappingURL=homeSection.css.map */

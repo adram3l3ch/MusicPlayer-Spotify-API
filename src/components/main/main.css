@@ -16,5 +16,19 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.main__bottom {
+  height: calc(100% - 80px);
+  overflow: auto;
+}
+
+.main__bottom::-webkit-scrollbar {
+  display: none;
+}
+
+.main__bottom > * {
+  margin: 50px 0;
 }
 /*# sourceMappingURL=main.css.map */
