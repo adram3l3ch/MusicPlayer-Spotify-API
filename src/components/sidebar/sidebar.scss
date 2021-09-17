@@ -1,0 +1,14 @@
+.sidebar {
+	background-color: aqua;
+	width: 70px;
+	background-color: var(--secondary);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;
+	transition: width 0.2s ease;
+
+	&:hover {
+		width: 250px;
+	}
+}

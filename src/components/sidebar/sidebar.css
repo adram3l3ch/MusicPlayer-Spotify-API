@@ -1,0 +1,23 @@
+.sidebar {
+  background-color: aqua;
+  width: 70px;
+  background-color: var(--secondary);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  -webkit-transition: width 0.2s ease;
+  transition: width 0.2s ease;
+}
+
+.sidebar:hover {
+  width: 250px;
+}
+/*# sourceMappingURL=sidebar.css.map */
