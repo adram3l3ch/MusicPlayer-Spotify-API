@@ -7,8 +7,8 @@ const Home = () => {
 	return (
 		<div className="home">
 			<Sidebar />
-			<Main />
 			<Player />
+			<Main />
 		</div>
 	);
 };
