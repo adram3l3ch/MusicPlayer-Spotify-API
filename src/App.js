@@ -27,6 +27,7 @@ function App() {
 		const hash = getToken();
 		window.location.hash = "";
 		const _token = hash.access_token;
+		window.localStorage.setItem("token", _token);
 		if (_token) {
 			dispatch(setToken(_token));
 			spotify.setAccessToken(_token);
@@ -62,7 +63,7 @@ function App() {
 	}, [topRated, dispatch]);
 
 	useEffect(() => {
-		if (currentSong?.ref?.src === "http://localhost:3000/null") {
+		if (/null/.test(currentSong?.ref?.src)) {
 			dispatch(
 				setModal({
 					message:
