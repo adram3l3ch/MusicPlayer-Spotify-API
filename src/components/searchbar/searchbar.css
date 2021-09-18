@@ -26,4 +26,11 @@
   outline: none;
   color: inherit;
 }
+
+@media (max-width: 800px) {
+  .searchbar {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
 /*# sourceMappingURL=searchbar.css.map */

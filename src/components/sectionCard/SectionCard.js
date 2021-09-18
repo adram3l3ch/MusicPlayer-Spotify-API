@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { setCurrentSong, setPlaying } from "../../features/userSlice";
+import { setCurrentSong, setModal, setPlaying } from "../../features/userSlice";
 import "./sectionCard.css";
 
 const SectionCard = ({ song, index }) => {
@@ -18,6 +18,23 @@ const SectionCard = ({ song, index }) => {
 			currentSong?.ref?.play();
 			dispatch(setPlaying(true));
 		} else {
+			dispatch(
+				setModal({
+					message:
+						"Oops!! Spotify didn't provided the URL for this song",
+					visible: true,
+				})
+			);
+			setTimeout(
+				() =>
+					dispatch(
+						setModal({
+							message: "",
+							visible: false,
+						})
+					),
+				5000
+			);
 			dispatch(setPlaying(false));
 		}
 	}, [currentSong]);

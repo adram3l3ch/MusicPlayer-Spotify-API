@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setPlaying } from "../../features/userSlice";
+import { setCurrentSong, setPlaying } from "../../features/userSlice";
 import "./playerStatus.css";
 
 let interval;
 // let a = 5;
 const PlayerStatus = () => {
-	const { playing, currentSong } = useSelector((state) => state.user);
+	const { playing, currentSong, topRated } = useSelector(
+		(state) => state.user
+	);
 	const dispatch = useDispatch();
 	const [time, setTime] = useState(0);
 	const updateTime = () => {
@@ -25,6 +27,17 @@ const PlayerStatus = () => {
 		if (time === 30) {
 			setTime(0);
 			dispatch(setPlaying(false));
+			const nextSong = topRated[currentSong.index + 1];
+			dispatch(
+				setCurrentSong({
+					index: currentSong.index + 1,
+					title: nextSong?.name,
+					artist: nextSong?.artists[0].name,
+					url: nextSong?.preview_url,
+					image: nextSong?.album.images[0].url,
+					ref: new Audio(nextSong?.preview_url),
+				})
+			);
 		}
 	}, [time]);
 

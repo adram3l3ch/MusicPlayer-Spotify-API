@@ -9,6 +9,7 @@ const initialState = {
 	currentSong: null,
 	token: null,
 	time: {},
+	modal: { message: "", visible: false },
 };
 
 export const userSlice = createSlice({
@@ -39,6 +40,9 @@ export const userSlice = createSlice({
 		setTime: (state, action) => {
 			state.time = action.payload;
 		},
+		setModal: (state, action) => {
+			state.modal = action.payload;
+		},
 	},
 });
 
@@ -51,6 +55,7 @@ export const {
 	setCurrentSong,
 	setPlaying,
 	setTime,
+	setModal,
 } = userSlice.actions;
 
 export default userSlice.reducer;

@@ -40,20 +40,6 @@
           user-select: none;
 }
 
-.player__left svg {
-  width: 40px;
-  height: 40px;
-  padding: 5px;
-  border-radius: 50%;
-  -webkit-transition: background-color 0.2s ease;
-  transition: background-color 0.2s ease;
-}
-
-.player__left svg:hover {
-  background-color: var(--primary);
-  cursor: pointer;
-}
-
 .player__left__title {
   font-weight: 600;
   font-size: 0.9rem;
@@ -78,5 +64,32 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+@media (max-width: 800px) {
+  .player {
+    bottom: 70px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 5px;
+  }
+  .player__left img {
+    margin-left: 5px;
+  }
+  .player__left__title {
+    font-size: 0.8rem;
+    width: 120px;
+  }
+  .player__left__artist {
+    font-size: 0.7rem;
+    width: 120px;
+  }
+  .player__right {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }
 /*# sourceMappingURL=player.css.map */

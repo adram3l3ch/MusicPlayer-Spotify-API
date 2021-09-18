@@ -24,4 +24,10 @@
 .playerStatus__duration {
   text-align: right;
 }
+
+@media (max-width: 800px) {
+  .playerStatus__current, .playerStatus__duration {
+    display: none;
+  }
+}
 /*# sourceMappingURL=playerStatus.css.map */

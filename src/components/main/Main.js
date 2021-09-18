@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import HomeQueue from "../homeQueue/HomeQueue";
 import HomeSection from "../homeSection/HomeSection";
+import Modal from "../modal/Modal";
 import Searchbar from "../searchbar/Searchbar";
 import User from "../user/User";
 import "./main.css";
@@ -12,6 +13,7 @@ const Main = () => {
 	);
 	return (
 		<div className="main">
+			<Modal />
 			<div className="main__top">
 				<Searchbar />
 				<User />

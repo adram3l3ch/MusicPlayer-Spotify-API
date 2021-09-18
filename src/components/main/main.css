@@ -31,4 +31,16 @@
 .main__bottom > * {
   margin: 50px 0;
 }
+
+@media (max-width: 800px) {
+  .main {
+    padding: 50px 20px 180px;
+  }
+  .main__top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
 /*# sourceMappingURL=main.css.map */

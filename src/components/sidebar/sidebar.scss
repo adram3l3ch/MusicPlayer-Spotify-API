@@ -15,4 +15,21 @@
 	&:hover {
 		width: 250px;
 	}
+
+	@media (max-width: 800px) {
+		bottom: 0;
+		right: 0;
+		width: auto;
+		left: 0;
+		top: initial;
+		height: 70px;
+		flex-direction: row;
+		z-index: 9999999;
+		justify-content: space-around;
+		background-color: var(--primary);
+
+		&:hover {
+			width: auto;
+		}
+	}
 }

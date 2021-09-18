@@ -8,6 +8,7 @@
 		border: 2px solid var(--accent);
 		border-radius: 50%;
 		color: var(--accent);
+		transform: translateY(-2px);
 	}
 
 	&__info {
@@ -22,6 +23,16 @@
 
 		h3 {
 			font-weight: 600;
+		}
+	}
+
+	@media (max-width: 800px) {
+		align-self: flex-end;
+		flex-direction: row-reverse;
+		text-align: right;
+
+		svg {
+			margin-left: 10px;
 		}
 	}
 }

@@ -24,4 +24,26 @@
 .sidebar:hover {
   width: 250px;
 }
+
+@media (max-width: 800px) {
+  .sidebar {
+    bottom: 0;
+    right: 0;
+    width: auto;
+    left: 0;
+    top: initial;
+    height: 70px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    z-index: 9999999;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    background-color: var(--primary);
+  }
+  .sidebar:hover {
+    width: auto;
+  }
+}
 /*# sourceMappingURL=sidebar.css.map */

@@ -27,16 +27,18 @@ const PlayerControls = () => {
 		if (currentSong) {
 			if (playing) currentSong?.ref?.pause();
 			const nextSong = topRated[currentSong.index + value];
-			dispatch(
-				setCurrentSong({
-					index: currentSong.index + value,
-					title: nextSong.name,
-					artist: nextSong.artists[0].name,
-					url: nextSong.preview_url,
-					image: nextSong.album.images[0].url,
-					ref: new Audio(nextSong.preview_url),
-				})
-			);
+			if (nextSong) {
+				dispatch(
+					setCurrentSong({
+						index: currentSong.index + value,
+						title: nextSong.name,
+						artist: nextSong.artists[0].name,
+						url: nextSong.preview_url,
+						image: nextSong.album.images[0].url,
+						ref: new Audio(nextSong.preview_url),
+					})
+				);
+			}
 		}
 	};
 

@@ -16,4 +16,11 @@
 	&__duration {
 		text-align: right;
 	}
+
+	@media (max-width: 800px) {
+		&__current,
+		&__duration {
+			display: none;
+		}
+	}
 }

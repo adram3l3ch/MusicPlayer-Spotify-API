@@ -23,6 +23,7 @@
 		&__next {
 			overflow: hidden;
 			position: relative;
+			background-color: var(--accent);
 
 			.details {
 				position: absolute;
@@ -34,12 +35,12 @@
 
 				h3 {
 					font-size: 2.5rem;
+					line-height: 1.2em;
 				}
 				h4 {
 					font-size: 1.2rem;
 					font-weight: 400;
 					letter-spacing: 0.4em;
-					transform: translateY(-5px);
 				}
 
 				p {
@@ -50,6 +51,21 @@
 
 					svg {
 						font-size: 2rem;
+					}
+				}
+
+				@media (max-width: 1000px) {
+					h3 {
+						font-size: 2rem;
+					}
+					h4 {
+						font-size: 0.8rem;
+					}
+					p {
+						font-size: 0.8rem;
+						svg {
+							font-size: 1.5rem;
+						}
 					}
 				}
 			}
@@ -68,6 +84,44 @@
 					var(--accent) 67.1%,
 					rgba(254, 102, 58, 0) 99.57%
 				);
+			}
+
+			@media (max-width: 1000px) {
+				&::after {
+					background: linear-gradient(
+						269.56deg,
+						var(--accent) 45.1%,
+						rgba(254, 102, 58, 0) 99.57%
+					);
+				}
+			}
+		}
+		@media (max-width: 800px) {
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows: 200px 150px;
+			gap: 20px;
+			height: 100%;
+			&__next {
+				grid-column: 1/4;
+				grid-row: 1/2;
+				&::after {
+					background: linear-gradient(
+						269.56deg,
+						var(--accent) 60.1%,
+						rgba(254, 102, 58, 0) 99.57%
+					);
+				}
+				.details {
+					right: 30px;
+				}
+			}
+			img {
+				grid-column: 1/3;
+				grid-row: 2/3;
+			}
+			img ~ img {
+				grid-column: 3/4;
+				grid-row: 2/3;
 			}
 		}
 	}

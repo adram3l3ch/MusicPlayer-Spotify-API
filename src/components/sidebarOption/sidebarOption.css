@@ -27,4 +27,13 @@
 .sidebarOption:hover, .sidebarOption.active {
   color: var(--accent);
 }
+
+@media (max-width: 800px) {
+  .sidebarOption {
+    margin: 0;
+  }
+  .sidebarOption__title {
+    display: none;
+  }
+}
 /*# sourceMappingURL=sidebarOption.css.map */

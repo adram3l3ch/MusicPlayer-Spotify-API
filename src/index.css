@@ -21,9 +21,5 @@ body {
 	--secondary: #2e2e2e;
 	--accent: #fe663a;
 	--neutral: #fff;
-}
-
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-		monospace;
+	user-select: text;
 }
