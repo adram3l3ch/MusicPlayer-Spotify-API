@@ -4,7 +4,6 @@ import { setCurrentSong, setPlaying } from "../../features/userSlice";
 import "./playerStatus.css";
 
 let interval;
-// let a = 5;
 const PlayerStatus = () => {
 	const { playing, currentSong, topRated } = useSelector(
 		(state) => state.user
@@ -39,7 +38,8 @@ const PlayerStatus = () => {
 				})
 			);
 		}
-	}, [time]);
+		// eslint-disable-next-line
+	}, [time, dispatch]);
 
 	useEffect(() => {
 		setTime(0);

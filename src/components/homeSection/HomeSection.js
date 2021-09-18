@@ -11,7 +11,7 @@ const HomeSection = ({ title, lists }) => {
 					<SectionCard
 						song={song.track || song}
 						index={index}
-						key={song.id}
+						key={index}
 					/>
 				))}
 			</div>

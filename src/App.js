@@ -43,7 +43,7 @@ function App() {
 				dispatch(setLikedSongs(resp.items));
 			});
 		}
-	}, []);
+	}, [dispatch]);
 
 	useEffect(() => {
 		if (topRated.length > 1) {
@@ -58,7 +58,7 @@ function App() {
 				})
 			);
 		}
-	}, [topRated]);
+	}, [topRated, dispatch]);
 
 	return <div className="app">{token ? <Home /> : <Login />}</div>;
 }

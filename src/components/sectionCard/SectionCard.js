@@ -37,7 +37,7 @@ const SectionCard = ({ song, index }) => {
 			currentSong?.ref?.play();
 			dispatch(setPlaying(true));
 		}
-	}, [currentSong]);
+	}, [currentSong, dispatch]);
 
 	const updateSong = () => {
 		if (playing) currentSong?.ref?.pause();
