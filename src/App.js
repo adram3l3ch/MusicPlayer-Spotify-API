@@ -14,7 +14,6 @@ import {
 	setPlaylists,
 	setCurrentSong,
 	setLikedSongs,
-	setSearchResults,
 	setModal,
 	setPlaying,
 } from "./features/userSlice";

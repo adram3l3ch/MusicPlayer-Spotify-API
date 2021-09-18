@@ -11,7 +11,10 @@ const Info = () => {
 				<p>Developed and designed by</p>
 				<h3>ADARSH</h3>
 				<div className="links">
-					<a href="www.linkedin.com/in/adram3l3ch" target="_blank">
+					<a
+						href="https://linkedin.com/in/adram3l3ch"
+						target="_blank"
+					>
 						<AiFillLinkedin />
 					</a>
 					<a href="https://github.com/adram3l3ch" target="_blank">
