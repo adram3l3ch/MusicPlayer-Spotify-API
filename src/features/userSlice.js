@@ -5,10 +5,10 @@ const initialState = {
 	topRated: [],
 	recentlyPlayed: [],
 	playlists: [],
+	likedSongs: [],
 	playing: false,
 	currentSong: null,
 	token: null,
-	time: {},
 	modal: { message: "", visible: false },
 };
 
@@ -37,11 +37,11 @@ export const userSlice = createSlice({
 		setPlaying: (state, action) => {
 			state.playing = action.payload;
 		},
-		setTime: (state, action) => {
-			state.time = action.payload;
-		},
 		setModal: (state, action) => {
 			state.modal = action.payload;
+		},
+		setLikedSongs: (state, action) => {
+			state.likedSongs = action.payload;
 		},
 	},
 });
@@ -54,8 +54,8 @@ export const {
 	setRecentlyPlayed,
 	setCurrentSong,
 	setPlaying,
-	setTime,
 	setModal,
+	setLikedSongs,
 } = userSlice.actions;
 
 export default userSlice.reducer;

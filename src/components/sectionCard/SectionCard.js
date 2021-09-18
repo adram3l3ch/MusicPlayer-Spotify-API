@@ -14,10 +14,7 @@ const SectionCard = ({ song, index }) => {
 		""
 	);
 	useEffect(() => {
-		if (currentSong?.ref?.src !== "http://localhost:3000/null") {
-			currentSong?.ref?.play();
-			dispatch(setPlaying(true));
-		} else {
+		if (currentSong?.ref?.src === "http://localhost:3000/null") {
 			dispatch(
 				setModal({
 					message:
@@ -36,6 +33,9 @@ const SectionCard = ({ song, index }) => {
 				5000
 			);
 			dispatch(setPlaying(false));
+		} else if (currentSong?.ref?.src) {
+			currentSong?.ref?.play();
+			dispatch(setPlaying(true));
 		}
 	}, [currentSong]);
 

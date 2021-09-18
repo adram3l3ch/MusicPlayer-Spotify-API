@@ -13,6 +13,7 @@ import {
 	setRecentlyPlayed,
 	setPlaylists,
 	setCurrentSong,
+	setLikedSongs,
 } from "./features/userSlice";
 
 const spotify = new SpotifyWebApi();
@@ -37,11 +38,15 @@ function App() {
 			spotify.getUserPlaylists().then((resp) => {
 				dispatch(setPlaylists(resp.items));
 			});
+			console.clear();
+			spotify.getMySavedTracks().then((resp) => {
+				dispatch(setLikedSongs(resp.items));
+			});
 		}
 	}, []);
 
 	useEffect(() => {
-		if (!!topRated) {
+		if (topRated.length > 1) {
 			dispatch(
 				setCurrentSong({
 					index: 0,

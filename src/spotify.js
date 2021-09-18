@@ -4,6 +4,7 @@ const clientID = "070587934141491eba9e3c76e9d4c15c";
 
 const scopes = [
 	"streaming",
+	"user-library-read",
 	"user-read-email",
 	"user-read-private",
 	"user-read-currently-playing",
