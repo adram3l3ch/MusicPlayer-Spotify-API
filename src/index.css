@@ -23,3 +23,7 @@ body {
 	--neutral: #fff;
 	user-select: text;
 }
+
+a {
+	text-decoration: none;
+}
