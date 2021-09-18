@@ -14,12 +14,15 @@ import {
 	setPlaylists,
 	setCurrentSong,
 	setLikedSongs,
+	setSearchResults,
+	setModal,
+	setPlaying,
 } from "./features/userSlice";
 
 const spotify = new SpotifyWebApi();
 
 function App() {
-	const { token, topRated } = useSelector((state) => state.user);
+	const { token, topRated, currentSong } = useSelector((state) => state.user);
 	const dispatch = useDispatch();
 	useEffect(() => {
 		const hash = getToken();
@@ -38,7 +41,6 @@ function App() {
 			spotify.getUserPlaylists().then((resp) => {
 				dispatch(setPlaylists(resp.items));
 			});
-			console.clear();
 			spotify.getMySavedTracks().then((resp) => {
 				dispatch(setLikedSongs(resp.items));
 			});
@@ -60,7 +62,37 @@ function App() {
 		}
 	}, [topRated, dispatch]);
 
-	return <div className="app">{token ? <Home /> : <Login />}</div>;
+	useEffect(() => {
+		if (currentSong?.ref?.src === "http://localhost:3000/null") {
+			dispatch(
+				setModal({
+					message:
+						"Oops!! Spotify didn't provided the URL for this song",
+					visible: true,
+				})
+			);
+			setTimeout(
+				() =>
+					dispatch(
+						setModal({
+							message: "",
+							visible: false,
+						})
+					),
+				5000
+			);
+			dispatch(setPlaying(false));
+		} else if (currentSong?.ref?.src) {
+			currentSong?.ref?.play();
+			dispatch(setPlaying(true));
+		}
+	}, [currentSong, dispatch]);
+
+	return (
+		<div className="app">
+			{token ? <Home spotify={spotify} /> : <Login />}
+		</div>
+	);
 }
 
 export default App;

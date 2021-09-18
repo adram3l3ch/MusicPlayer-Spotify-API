@@ -9,13 +9,22 @@ const Sidebar = () => {
 	return (
 		<div className="sidebar">
 			<Link to="/">
-				<SIdebarOption title="Home" Icon={AiFillHome} active />
+				<SIdebarOption title="Home" Icon={AiFillHome} index={0} />
 			</Link>
 			<Link to="/likedsongs">
-				<SIdebarOption title="Liked Songs" Icon={AiFillHeart} />
+				<SIdebarOption
+					title="Liked Songs"
+					Icon={AiFillHeart}
+					index={1}
+				/>
 			</Link>
-			<SIdebarOption title="Plalists" Icon={RiPlayListFill} />
-			<SIdebarOption title="About" Icon={AiFillInfoCircle} />
+			<Link to="/about">
+				<SIdebarOption
+					title="About"
+					Icon={AiFillInfoCircle}
+					index={2}
+				/>
+			</Link>
 		</div>
 	);
 };

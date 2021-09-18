@@ -6,9 +6,13 @@ const initialState = {
 	recentlyPlayed: [],
 	playlists: [],
 	likedSongs: [],
+	searchTerm: "",
+	searchResults: [],
 	playing: false,
+	isSearching: false,
 	currentSong: null,
 	token: null,
+	activeTab: 0,
 	modal: { message: "", visible: false },
 };
 
@@ -43,6 +47,18 @@ export const userSlice = createSlice({
 		setLikedSongs: (state, action) => {
 			state.likedSongs = action.payload;
 		},
+		setSearchTerm: (state, action) => {
+			state.searchTerm = action.payload;
+		},
+		setSearchResults: (state, action) => {
+			state.searchResults = action.payload;
+		},
+		setIsSearching: (state, action) => {
+			state.isSearching = action.payload;
+		},
+		setActiveTab: (state, action) => {
+			state.activeTab = action.payload;
+		},
 	},
 });
 
@@ -56,6 +72,10 @@ export const {
 	setPlaying,
 	setModal,
 	setLikedSongs,
+	setSearchResults,
+	setSearchTerm,
+	setIsSearching,
+	setActiveTab,
 } = userSlice.actions;
 
 export default userSlice.reducer;

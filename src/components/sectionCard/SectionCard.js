@@ -13,31 +13,6 @@ const SectionCard = ({ song, index }) => {
 		(name, artist) => `${name && name + ","} ${artist.name}`,
 		""
 	);
-	useEffect(() => {
-		if (currentSong?.ref?.src === "http://localhost:3000/null") {
-			dispatch(
-				setModal({
-					message:
-						"Oops!! Spotify didn't provided the URL for this song",
-					visible: true,
-				})
-			);
-			setTimeout(
-				() =>
-					dispatch(
-						setModal({
-							message: "",
-							visible: false,
-						})
-					),
-				5000
-			);
-			dispatch(setPlaying(false));
-		} else if (currentSong?.ref?.src) {
-			currentSong?.ref?.play();
-			dispatch(setPlaying(true));
-		}
-	}, [currentSong, dispatch]);
 
 	const updateSong = () => {
 		if (playing) currentSong?.ref?.pause();

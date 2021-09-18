@@ -1,0 +1,10 @@
+.searchResultPage {
+  height: 95%;
+  overflow: auto;
+  padding-bottom: 100px;
+}
+
+.searchResultPage::-webkit-scrollbar {
+  display: none;
+}
+/*# sourceMappingURL=searchResultPage.css.map */

@@ -4,13 +4,13 @@ import Player from "../../components/player/Player";
 import { BrowserRouter as Router } from "react-router-dom";
 import Sidebar from "../../components/sidebar/Sidebar";
 
-const Home = () => {
+const Home = ({ spotify }) => {
 	return (
 		<div className="home">
 			<Router>
 				<Sidebar />
 				<Player />
-				<Main />
+				<Main spotify={spotify} />
 			</Router>
 		</div>
 	);
