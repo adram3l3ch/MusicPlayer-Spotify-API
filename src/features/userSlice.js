@@ -2,10 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
 	user: null,
+	topRated: [],
+	recentlyPlayed: [],
 	playlists: [],
 	playing: false,
-	item: null,
+	currentSong: null,
 	token: null,
+	time: {},
 };
 
 export const userSlice = createSlice({
@@ -19,11 +22,35 @@ export const userSlice = createSlice({
 			state.playlists = action.payload;
 		},
 		setToken: (state, action) => {
-			state.token += action.payload;
+			state.token = action.payload;
+		},
+		setTopRated: (state, action) => {
+			state.topRated = action.payload;
+		},
+		setRecentlyPlayed: (state, action) => {
+			state.recentlyPlayed = action.payload;
+		},
+		setCurrentSong: (state, action) => {
+			state.currentSong = action.payload;
+		},
+		setPlaying: (state, action) => {
+			state.playing = action.payload;
+		},
+		setTime: (state, action) => {
+			state.time = action.payload;
 		},
 	},
 });
 
-export const { setUser, setPlaylists, setToken } = userSlice.actions;
+export const {
+	setUser,
+	setPlaylists,
+	setToken,
+	setTopRated,
+	setRecentlyPlayed,
+	setCurrentSong,
+	setPlaying,
+	setTime,
+} = userSlice.actions;
 
 export default userSlice.reducer;

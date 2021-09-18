@@ -4,6 +4,9 @@
   display: -ms-flexbox;
   display: flex;
   gap: 30px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   width: 100%;
   overflow-x: auto;
 }

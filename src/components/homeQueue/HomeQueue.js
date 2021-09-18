@@ -1,33 +1,62 @@
 import React from "react";
 import "./homeQueue.css";
 import { BiSkipNext } from "react-icons/bi";
+import { useDispatch, useSelector } from "react-redux";
+import { setCurrentSong, setPlaying } from "../../features/userSlice";
 
 const HomeQueue = () => {
+	const { currentSong, topRated } = useSelector((state) => state.user);
+	const next = topRated[currentSong?.index + 1];
+	const third = topRated[currentSong?.index + 2];
+	const fourth = topRated[currentSong?.index + 3];
+	const dispatch = useDispatch();
+
+	const play = ({ name: title, artists, preview_url, album }, index) => {
+		const artist = artists.reduce(
+			(name, artist) => `${name && name + ","} ${artist.name}`,
+			""
+		);
+		const image = album?.images[0].url;
+		currentSong?.ref?.pause();
+		dispatch(
+			setCurrentSong({
+				index,
+				title,
+				artist,
+				url: preview_url,
+				image,
+				ref: new Audio(preview_url),
+			})
+		);
+		dispatch(setPlaying(true));
+	};
 	return (
 		<div className="homeQueue">
 			<h2>ON THE QUEUE</h2>
 			<div className="homeQueue__grid">
-				<div className="homeQueue__grid__next">
+				<div
+					className="homeQueue__grid__next"
+					onClick={() => play(next, currentSong?.index + 1)}
+				>
 					<div className="details">
 						<p>
 							Next <BiSkipNext />
 						</p>
-						<h3>KIDS</h3>
-						<h4>ONE REPUBLIC</h4>
+						<h3>{next?.name?.toUpperCase()}</h3>
+						<h4>{next?.artists[0]?.name.toUpperCase()}</h4>
 					</div>
-					<img
-						src="https://cms-cdn.with.in/content/CYI63vg/images/20180504104826-OneRepubKids_1024x539_Main-1024x539-827506.jpg"
-						alt=""
-					/>
+					<img src={next?.album?.images[0].url} alt="" />
 				</div>
 
 				<img
-					src="https://i.ytimg.com/vi/KkY3Hs31PLo/maxresdefault.jpg"
+					src={third?.album?.images[0].url}
 					alt=""
+					onClick={() => play(third, currentSong?.index + 2)}
 				/>
 				<img
-					src="https://www.lahiguera.net/musicalia/artistas/broods/disco/7626/tema/13363/broods_heartlines-portada.jpg"
+					src={fourth?.album?.images[0].url}
 					alt=""
+					onClick={() => play(fourth, currentSong?.index + 3)}
 				/>
 			</div>
 		</div>

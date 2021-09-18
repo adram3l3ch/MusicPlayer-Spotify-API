@@ -2,20 +2,18 @@ import React from "react";
 import SectionCard from "../sectionCard/SectionCard";
 import "./homeSection.css";
 
-const HomeSection = ({ title }) => {
+const HomeSection = ({ title, lists }) => {
 	return (
 		<div className="homeSection">
 			<h2>{title}</h2>
 			<div className="homeSection__cards">
-				<SectionCard />
-				<SectionCard />
-				<SectionCard />
-				<SectionCard />
-				<SectionCard />
-				<SectionCard />
-				<SectionCard />
-				<SectionCard />
-				<SectionCard />
+				{lists?.map((song, index) => (
+					<SectionCard
+						song={song.track || song}
+						index={index}
+						key={song.id}
+					/>
+				))}
 			</div>
 		</div>
 	);

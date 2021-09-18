@@ -16,6 +16,7 @@
 			height: inherit;
 			object-fit: cover;
 			border-radius: 20px;
+			cursor: pointer;
 			background-color: aliceblue;
 		}
 
@@ -32,7 +33,7 @@
 				text-align: right;
 
 				h3 {
-					font-size: 3rem;
+					font-size: 2.5rem;
 				}
 				h4 {
 					font-size: 1.2rem;
@@ -45,7 +46,6 @@
 					display: flex;
 					align-items: center;
 					justify-content: flex-end;
-					transform: translateY(15px);
 					font-weight: 200;
 
 					svg {
@@ -65,7 +65,7 @@
 				inset: 0;
 				background: linear-gradient(
 					269.56deg,
-					var(--accent) 46.1%,
+					var(--accent) 67.1%,
 					rgba(254, 102, 58, 0) 99.57%
 				);
 			}

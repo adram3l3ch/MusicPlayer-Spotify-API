@@ -5,13 +5,15 @@
 	.bar {
 		flex-grow: 1;
 		height: 4px;
-		background-color: var(--accent);
 		border-radius: 50px;
-		margin: 0 15px;
 	}
 	&__current,
 	&__duration {
+		width: 50px;
 		font-size: 0.75rem;
 		font-weight: 400;
+	}
+	&__duration {
+		text-align: right;
 	}
 }

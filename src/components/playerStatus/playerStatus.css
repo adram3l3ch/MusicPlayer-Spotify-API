@@ -12,13 +12,16 @@
       -ms-flex-positive: 1;
           flex-grow: 1;
   height: 4px;
-  background-color: var(--accent);
   border-radius: 50px;
-  margin: 0 15px;
 }
 
 .playerStatus__current, .playerStatus__duration {
+  width: 50px;
   font-size: 0.75rem;
   font-weight: 400;
+}
+
+.playerStatus__duration {
+  text-align: right;
 }
 /*# sourceMappingURL=playerStatus.css.map */

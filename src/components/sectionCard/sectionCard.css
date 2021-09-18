@@ -2,6 +2,8 @@
   width: 220px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  position: relative;
+  cursor: pointer;
 }
 
 .sectionCard img {
@@ -10,6 +12,23 @@
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 20px;
+}
+
+.sectionCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  height: 220px;
+  border-radius: 20px;
+  background-color: var(--neutral);
+  mix-blend-mode: color;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+
+.sectionCard:hover::before {
+  opacity: 0.7;
 }
 
 .sectionCard h3 {
@@ -23,6 +42,6 @@
   font-weight: 200;
   padding-left: 5px;
   font-size: 0.8rem;
-  opacity: 0.75;
+  opacity: 0.7;
 }
 /*# sourceMappingURL=sectionCard.css.map */
