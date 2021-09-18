@@ -1,7 +1,6 @@
 import React from "react";
 import SIdebarOption from "../sidebarOption/SIdebarOption";
 import { AiFillHome, AiFillHeart, AiFillInfoCircle } from "react-icons/ai";
-import { RiPlayListFill } from "react-icons/ri";
 import "./sidebar.css";
 import { Link } from "react-router-dom";
 

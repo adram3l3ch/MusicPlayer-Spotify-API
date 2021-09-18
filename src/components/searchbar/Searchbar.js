@@ -23,7 +23,7 @@ const Searchbar = ({ spotify }) => {
 			});
 		};
 		timeout = setTimeout(setResults, 1500);
-	}, [searchTerm]);
+	}, [searchTerm, dispatch, spotify]);
 
 	return (
 		<div className="searchbar">

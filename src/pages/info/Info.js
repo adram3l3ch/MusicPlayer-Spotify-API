@@ -14,13 +14,22 @@ const Info = () => {
 					<a
 						href="https://linkedin.com/in/adram3l3ch"
 						target="_blank"
+						rel="noreferrer"
 					>
 						<AiFillLinkedin />
 					</a>
-					<a href="https://github.com/adram3l3ch" target="_blank">
+					<a
+						href="https://github.com/adram3l3ch"
+						target="_blank"
+						rel="noreferrer"
+					>
 						<AiFillGithub />
 					</a>
-					<a href="mailto:adramelech.psd@gmail.com" target="_blank">
+					<a
+						href="mailto:adramelech.psd@gmail.com"
+						target="_blank"
+						rel="noreferrer"
+					>
 						<SiGmail />
 					</a>
 				</div>
