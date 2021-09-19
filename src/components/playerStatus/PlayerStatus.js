@@ -18,6 +18,7 @@ const PlayerStatus = () => {
 		} else {
 			interval = setInterval(updateTime, 1);
 		}
+		// eslint-disable-next-line
 	}, [playing]);
 
 	useEffect(() => {

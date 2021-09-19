@@ -11,7 +11,6 @@ import {
 	setToken,
 	setTopRated,
 	setRecentlyPlayed,
-	setPlaylists,
 	setCurrentSong,
 	setLikedSongs,
 	setModal,
