@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Sidebar = () => {
 	return (
-		<div className="sidebar">
+		<nav className="sidebar">
 			<Link to="/">
 				<SIdebarOption title="Home" Icon={AiFillHome} index={0} />
 			</Link>
@@ -24,7 +24,7 @@ const Sidebar = () => {
 					index={2}
 				/>
 			</Link>
-		</div>
+		</nav>
 	);
 };
 

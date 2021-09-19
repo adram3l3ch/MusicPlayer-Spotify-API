@@ -12,31 +12,23 @@ import SearchResultPage from "../../pages/searchResultPage/SearchResultPage";
 import Info from "../../pages/info/Info";
 
 const Main = ({ spotify }) => {
-	const { topRated, recentlyPlayed, currentSong, isSearching } = useSelector(
-		(state) => state.user
-	);
+	const { topRated, recentlyPlayed, currentSong, isSearching } = useSelector(state => state.user);
 	return (
-		<div className="main">
+		<main className="main">
 			<Modal />
-			<div className="main__top">
+			<header className="main__top">
 				<Searchbar spotify={spotify} />
 				<User />
-			</div>
+			</header>
 			{isSearching ? (
 				<SearchResultPage />
 			) : (
-				<div className="main__bottom">
+				<section className="main__bottom">
 					<Switch>
 						<Route exact path="/">
 							{topRated[currentSong?.index + 3] && <HomeQueue />}
-							<HomeSection
-								title="MADE FOR YOU"
-								lists={topRated}
-							/>
-							<HomeSection
-								title="RECENTLY PLAYED"
-								lists={recentlyPlayed}
-							/>
+							<HomeSection title="MADE FOR YOU" lists={topRated} />
+							<HomeSection title="RECENTLY PLAYED" lists={recentlyPlayed} />
 						</Route>
 						<Route path="/likedsongs">
 							<LikedSongs />
@@ -45,9 +37,9 @@ const Main = ({ spotify }) => {
 							<Info />
 						</Route>
 					</Switch>
-				</div>
+				</section>
 			)}
-		</div>
+		</main>
 	);
 };
 

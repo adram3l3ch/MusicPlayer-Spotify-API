@@ -21,7 +21,7 @@ import {
 const spotify = new SpotifyWebApi();
 
 function App() {
-	const { token, topRated, currentSong } = useSelector((state) => state.user);
+	const { token, topRated, currentSong } = useSelector(state => state.user);
 	const dispatch = useDispatch();
 	useEffect(() => {
 		const hash = getToken();
@@ -31,17 +31,12 @@ function App() {
 		if (_token) {
 			dispatch(setToken(_token));
 			spotify.setAccessToken(_token);
-			spotify.getMe().then((user) => dispatch(setUser(user)));
-			spotify
-				.getMyTopTracks()
-				.then((resp) => dispatch(setTopRated(resp.items)));
-			spotify.getMyRecentlyPlayedTracks().then((resp) => {
+			spotify.getMe().then(user => dispatch(setUser(user)));
+			spotify.getMyTopTracks().then(resp => dispatch(setTopRated(resp.items)));
+			spotify.getMyRecentlyPlayedTracks().then(resp => {
 				dispatch(setRecentlyPlayed(resp.items));
 			});
-			spotify.getUserPlaylists().then((resp) => {
-				dispatch(setPlaylists(resp.items));
-			});
-			spotify.getMySavedTracks().then((resp) => {
+			spotify.getMySavedTracks().then(resp => {
 				dispatch(setLikedSongs(resp.items));
 			});
 		}
@@ -57,8 +52,7 @@ function App() {
 		if (/null/.test(currentSong?.ref?.src)) {
 			dispatch(
 				setModal({
-					message:
-						"Oops!! Spotify didn't provided the URL for this song",
+					message: "Oops!! Spotify didn't provided the URL for this song",
 					visible: true,
 				})
 			);
@@ -79,11 +73,7 @@ function App() {
 		}
 	}, [currentSong, dispatch]);
 
-	return (
-		<div className="app">
-			{token ? <Home spotify={spotify} /> : <Login />}
-		</div>
-	);
+	return <div className="app">{token ? <Home spotify={spotify} /> : <Login />}</div>;
 }
 
 export default App;

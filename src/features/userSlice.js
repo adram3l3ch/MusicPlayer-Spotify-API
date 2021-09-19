@@ -4,7 +4,6 @@ const initialState = {
 	user: null,
 	topRated: [],
 	recentlyPlayed: [],
-	playlists: [],
 	likedSongs: [],
 	searchTerm: "",
 	searchResults: [],
@@ -22,9 +21,6 @@ export const userSlice = createSlice({
 	reducers: {
 		setUser: (state, action) => {
 			state.user = action.payload;
-		},
-		setPlaylists: (state, action) => {
-			state.playlists = action.payload;
 		},
 		setToken: (state, action) => {
 			state.token = action.payload;

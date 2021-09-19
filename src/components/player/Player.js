@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 const Player = () => {
 	const { currentSong } = useSelector((state) => state.user);
 	return (
-		<div className="player">
+		<footer className="player">
 			<div className="player__left">
 				<img src={currentSong?.image} alt="" draggable="false" />
 				<div className="player__left__songInfo">
@@ -25,7 +25,7 @@ const Player = () => {
 			<div className="player__right">
 				<PlayerStatus />
 			</div>
-		</div>
+		</footer>
 	);
 };
 

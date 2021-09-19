@@ -4,12 +4,12 @@ import { loginURL } from "../../spotify";
 
 const Login = () => {
 	return (
-		<div className="login">
+		<main className="login">
 			<h1>WELCOME</h1>
 			<a href={loginURL}>
 				<button>Login with Spotify</button>
 			</a>
-		</div>
+		</main>
 	);
 };
 

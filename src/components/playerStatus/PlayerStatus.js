@@ -23,7 +23,7 @@ const PlayerStatus = () => {
 	}, [playing]);
 
 	useEffect(() => {
-		if (parseInt(time) === parseInt(currentSong?.ref.duration)) {
+		if (parseInt(time) === parseInt(currentSong?.ref.duration) - 1) {
 			setTime(0);
 			dispatch(setPlaying(false));
 			const song = topRated[currentSong.index + 1];
@@ -32,6 +32,8 @@ const PlayerStatus = () => {
 		}
 		// eslint-disable-next-line
 	}, [time, dispatch]);
+
+	useEffect(() => setTime(0), [currentSong]);
 
 	return (
 		<div className="playerStatus">
