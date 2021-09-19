@@ -8,6 +8,7 @@
 	padding: 0;
 	font-family: "Poppins", sans-serif;
 	letter-spacing: 0.08em;
+	user-select: none;
 }
 
 body {
@@ -21,7 +22,6 @@ body {
 	--secondary: #2e2e2e;
 	--accent: #fe663a;
 	--neutral: #fff;
-	user-select: text;
 }
 
 a {

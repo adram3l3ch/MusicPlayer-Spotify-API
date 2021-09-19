@@ -11,24 +11,10 @@ const HomeQueue = () => {
 	const fourth = topRated[currentSong?.index + 3];
 	const dispatch = useDispatch();
 
-	const play = ({ name: title, artists, preview_url, album }, index) => {
-		const artist = artists.reduce(
-			(name, artist) => `${name && name + ","} ${artist.name}`,
-			""
-		);
-		const image = album?.images[0].url;
+	const play = (song, index) => {
 		currentSong?.ref?.pause();
-		dispatch(
-			setCurrentSong({
-				index,
-				title,
-				artist,
-				url: preview_url,
-				image,
-				ref: new Audio(preview_url),
-			})
-		);
-		dispatch(setPlaying(true));
+		dispatch(setPlaying(false));
+		dispatch(setCurrentSong({ song, index }));
 	};
 	return (
 		<div className="homeQueue">

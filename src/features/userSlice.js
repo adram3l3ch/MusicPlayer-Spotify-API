@@ -36,7 +36,22 @@ export const userSlice = createSlice({
 			state.recentlyPlayed = action.payload;
 		},
 		setCurrentSong: (state, action) => {
-			state.currentSong = action.payload;
+			const { song, index } = action.payload;
+			const image = song?.album.images[0]?.url;
+			const title = song?.name;
+			const artist = song?.artists.reduce(
+				(name, artist) => `${name && name + ","} ${artist.name}`,
+				""
+			);
+			const url = song?.preview_url;
+			state.currentSong = {
+				index,
+				title,
+				artist,
+				url,
+				image,
+				ref: new Audio(url),
+			};
 		},
 		setPlaying: (state, action) => {
 			state.playing = action.payload;

@@ -49,16 +49,7 @@ function App() {
 
 	useEffect(() => {
 		if (topRated.length > 1) {
-			dispatch(
-				setCurrentSong({
-					index: 0,
-					title: topRated[0]?.name,
-					artist: topRated[0]?.artists[0].name,
-					url: topRated[0]?.preview_url,
-					image: topRated[0]?.album.images[0].url,
-					ref: new Audio(topRated[0]?.preview_url),
-				})
-			);
+			dispatch(setCurrentSong({ song: topRated[0], index: 0 }));
 		}
 	}, [topRated, dispatch]);
 

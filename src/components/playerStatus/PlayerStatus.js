@@ -11,56 +11,35 @@ const PlayerStatus = () => {
 	const dispatch = useDispatch();
 	const [time, setTime] = useState(0);
 	const updateTime = () => {
-		setTime((time) => time + 1);
+		setTime((time) => currentSong.ref.currentTime);
 	};
 
 	useEffect(() => {
 		if (!playing) {
 			clearInterval(interval);
 		} else {
-			interval = setInterval(updateTime, 1000);
+			interval = setInterval(updateTime, 100);
 		}
 	}, [playing]);
 
 	useEffect(() => {
-		if (time === 30) {
+		if (parseInt(time) === parseInt(currentSong?.ref.duration)) {
 			setTime(0);
 			dispatch(setPlaying(false));
-			const nextSong = topRated[currentSong.index + 1];
-			dispatch(
-				setCurrentSong({
-					index: currentSong.index + 1,
-					title: nextSong?.name,
-					artist: nextSong?.artists[0].name,
-					url: nextSong?.preview_url,
-					image: nextSong?.album.images[0].url,
-					ref: new Audio(nextSong?.preview_url),
-				})
-			);
+			const song = topRated[currentSong.index + 1];
+			console.log(song);
+			dispatch(setCurrentSong({ song, index: currentSong.index + 1 }));
 		}
 		// eslint-disable-next-line
 	}, [time, dispatch]);
-
-	useEffect(() => {
-		setTime(0);
-	}, [currentSong]);
 
 	return (
 		<div className="playerStatus">
 			<p className="playerStatus__current">
 				00:
-				{time < 10 ? `0${time}` : time}
+				{time < 10 ? `0${parseInt(time)}` : parseInt(time)}
 			</p>
-			<div
-				className="bar"
-				style={{
-					background: `linear-gradient(
-			to right,
-			var(--accent) ${time * (100 / 30)}%,
-			rgba(254, 102, 58,0.2) ${time * (100 / 30)}%
-		)`,
-				}}
-			></div>
+			<div className="bar" style={{ "--percent": `${time}%` }}></div>
 			<p className="playerStatus__duration">00:30</p>
 		</div>
 	);

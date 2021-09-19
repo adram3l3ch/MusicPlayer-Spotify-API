@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { setCurrentSong } from "../../features/userSlice";
+import { setCurrentSong, setPlaying } from "../../features/userSlice";
 import "./sectionCard.css";
 
 const SectionCard = ({ song, index }) => {
@@ -16,16 +16,8 @@ const SectionCard = ({ song, index }) => {
 
 	const updateSong = () => {
 		if (playing) currentSong?.ref?.pause();
-		dispatch(
-			setCurrentSong({
-				index,
-				title,
-				artist,
-				url: song.preview_url,
-				image,
-				ref: new Audio(song.preview_url),
-			})
-		);
+		dispatch(setPlaying(false));
+		dispatch(setCurrentSong({ song, index }));
 	};
 
 	return (

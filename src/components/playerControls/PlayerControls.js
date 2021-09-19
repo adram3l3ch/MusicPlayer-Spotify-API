@@ -13,7 +13,7 @@ const PlayerControls = () => {
 	);
 
 	const play = () => {
-		if (currentSong?.ref?.src !== "http://localhost:3000/null")
+		if (!/null/.test(currentSong?.ref?.src))
 			if (playing) {
 				currentSong.ref.pause();
 				dispatch(setPlaying(false));
@@ -26,21 +26,19 @@ const PlayerControls = () => {
 	const nextOrPrev = (value) => {
 		if (currentSong) {
 			if (playing) currentSong?.ref?.pause();
-			const nextSong = topRated[currentSong.index + value];
-			if (nextSong) {
-				dispatch(
-					setCurrentSong({
-						index: currentSong.index + value,
-						title: nextSong.name,
-						artist: nextSong.artists[0].name,
-						url: nextSong.preview_url,
-						image: nextSong.album.images[0].url,
-						ref: new Audio(nextSong.preview_url),
-					})
-				);
+			dispatch(setPlaying(false));
+			const song = topRated[currentSong.index + value];
+			const index = currentSong.index + value;
+			if (song) {
+				dispatch(setCurrentSong({ song, index }));
 			}
 		}
 	};
+
+	currentSong?.ref.addEventListener("play", () => dispatch(setPlaying(true)));
+	currentSong?.ref.addEventListener("pause", () =>
+		dispatch(setPlaying(false))
+	);
 
 	return (
 		<div className="playerControls">

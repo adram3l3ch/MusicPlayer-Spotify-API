@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import { BiSearch } from "react-icons/bi";
 import { ImCancelCircle } from "react-icons/im";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import {
 	setIsSearching,
 	setSearchResults,
@@ -22,7 +21,7 @@ const Searchbar = ({ spotify }) => {
 				dispatch(setSearchResults(resp.tracks.items));
 			});
 		};
-		timeout = setTimeout(setResults, 1500);
+		timeout = setTimeout(setResults, 1000);
 	}, [searchTerm, dispatch, spotify]);
 
 	return (
