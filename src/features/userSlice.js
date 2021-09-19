@@ -33,7 +33,7 @@ export const userSlice = createSlice({
 		},
 		setCurrentSong: (state, action) => {
 			const { song, index } = action.payload;
-			const image = song?.album.images[0]?.url;
+			const image = song?.album.images[2]?.url;
 			const title = song?.name;
 			const artist = song?.artists.reduce(
 				(name, artist) => `${name && name + ","} ${artist.name}`,

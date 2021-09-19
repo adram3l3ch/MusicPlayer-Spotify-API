@@ -4,12 +4,13 @@ import SearchResult from "../../components/searchResult/SearchResult";
 import "./searchResultPage.css";
 
 const SearchResultPage = () => {
-	const { searchResults } = useSelector((state) => state.user);
+	const { searchResults } = useSelector(state => state.user);
 	return (
 		<div className="searchResultPage">
-			{searchResults.map((song) => (
+			{searchResults.map(song => (
 				<SearchResult song={song} />
 			))}
+			{searchResults.length > 0 || <h2>Search for any song</h2>}
 		</div>
 	);
 };
