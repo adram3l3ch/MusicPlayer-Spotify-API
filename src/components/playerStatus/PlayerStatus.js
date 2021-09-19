@@ -30,7 +30,7 @@ const PlayerStatus = () => {
 		// eslint-disable-next-line
 	}, [time, dispatch]);
 
-	// useEffect(() => setTime(0), [currentSong]);
+	useEffect(() => setTime(0), [currentSong]);
 
 	return (
 		<div className="playerStatus">
