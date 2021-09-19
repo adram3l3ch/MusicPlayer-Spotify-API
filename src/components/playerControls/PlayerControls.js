@@ -31,8 +31,8 @@ const PlayerControls = () => {
 		}
 	};
 
-	currentSong?.ref.addEventListener("play", () => dispatch(setPlaying(true)));
-	currentSong?.ref.addEventListener("pause", () => dispatch(setPlaying(false)));
+	// currentSong?.ref.addEventListener("play", () => dispatch(setPlaying(true)));
+	// currentSong?.ref.addEventListener("pause", () => dispatch(setPlaying(false)));
 
 	return (
 		<div className="playerControls">

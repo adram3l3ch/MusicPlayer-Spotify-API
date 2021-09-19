@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setCurrentSong } from "../../features/userSlice";
+import { setCurrentSong, setPlaying } from "../../features/userSlice";
 import "./playerStatus.css";
 
 let interval;
@@ -23,7 +23,7 @@ const PlayerStatus = () => {
 
 	useEffect(() => {
 		if (parseInt(time) === parseInt(currentSong?.ref.duration)) {
-			// dispatch(setPlaying(false));
+			dispatch(setPlaying(false));
 			const song = topRated[currentSong.index + 1];
 			dispatch(setCurrentSong({ song, index: currentSong.index + 1 }));
 		}
