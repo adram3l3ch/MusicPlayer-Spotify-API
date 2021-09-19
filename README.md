@@ -1,3 +1,26 @@
+# Music Player Using the Spotify API
+
+It is a music player built using the spotify web API. You can search for any song and can hear the prview verdion of that song. Also you can view your liked songs, recently played ones from spotify.
+
+### Screenshot
+
+![](./Design/image.png)
+
+### Links
+
+-   Solution URL: [Github](https://github.com/adram3l3ch/MusicPlayer-Spotify-API)
+-   Live Site URL: [Netlify](https://musicplayer-spotify-api.netlify.app/)
+
+### Built with
+
+-   Semantic HTML5 markup
+-   CSS custom properties
+-   SASS
+-   React Redux
+-   CSS Grid
+-   React Router
+-   Flexbox
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts
