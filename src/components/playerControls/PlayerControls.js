@@ -14,8 +14,10 @@ const PlayerControls = () => {
 		if (!/null/.test(currentSong?.ref?.src))
 			if (playing) {
 				currentSong.ref.pause();
+				dispatch(setPlaying(false));
 			} else {
 				currentSong.ref.play();
+				dispatch(setPlaying(true));
 			}
 	};
 
