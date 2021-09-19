@@ -23,7 +23,7 @@ const PlayerStatus = () => {
 
 	useEffect(() => {
 		if (parseInt(time) === parseInt(currentSong?.ref.duration)) {
-			dispatch(setPlaying(false));
+			// dispatch(setPlaying(false));
 			const song = topRated[currentSong.index + 1];
 			dispatch(setCurrentSong({ song, index: currentSong.index + 1 }));
 		}
