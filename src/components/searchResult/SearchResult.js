@@ -1,5 +1,4 @@
 import React from "react";
-import "./searchResult.css";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";

@@ -1,6 +1,5 @@
 import React from "react";
 import SectionCard from "../sectionCard/SectionCard";
-import "./homeSection.css";
 
 const HomeSection = ({ title, lists }) => {
 	return (
@@ -8,11 +7,7 @@ const HomeSection = ({ title, lists }) => {
 			<h2>{title}</h2>
 			<div className="homeSection__cards">
 				{lists?.map((song, index) => (
-					<SectionCard
-						song={song.track || song}
-						index={index}
-						key={index}
-					/>
+					<SectionCard song={song.track || song} index={index} key={index} />
 				))}
 			</div>
 		</div>

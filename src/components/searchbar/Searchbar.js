@@ -2,22 +2,17 @@ import React, { useEffect } from "react";
 import { BiSearch } from "react-icons/bi";
 import { ImCancelCircle } from "react-icons/im";
 import { useSelector, useDispatch } from "react-redux";
-import {
-	setIsSearching,
-	setSearchResults,
-	setSearchTerm,
-} from "../../features/userSlice";
-import "./searchbar.css";
+import { setIsSearching, setSearchResults, setSearchTerm } from "../../features/userSlice";
 
 let timeout;
 const Searchbar = ({ spotify }) => {
 	const dispatch = useDispatch();
-	const { searchTerm } = useSelector((state) => state.user);
+	const { searchTerm } = useSelector(state => state.user);
 
 	useEffect(() => {
 		clearTimeout(timeout);
 		const setResults = () => {
-			spotify.searchTracks(searchTerm).then((resp) => {
+			spotify.searchTracks(searchTerm).then(resp => {
 				dispatch(setSearchResults(resp.tracks.items));
 			});
 		};
@@ -34,7 +29,7 @@ const Searchbar = ({ spotify }) => {
 				onFocus={() => {
 					dispatch(setIsSearching(true));
 				}}
-				onChange={(e) => {
+				onChange={e => {
 					dispatch(setSearchTerm(e.target.value));
 				}}
 			/>

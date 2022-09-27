@@ -1,11 +1,10 @@
 import React from "react";
-import "./homeQueue.css";
 import { BiSkipNext } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentSong, setPlaying } from "../../features/userSlice";
 
 const HomeQueue = () => {
-	const { currentSong, topRated } = useSelector((state) => state.user);
+	const { currentSong, topRated } = useSelector(state => state.user);
 	const next = topRated[currentSong?.index + 1];
 	const third = topRated[currentSong?.index + 2];
 	const fourth = topRated[currentSong?.index + 3];
@@ -20,10 +19,7 @@ const HomeQueue = () => {
 		<div className="homeQueue">
 			<h2>ON THE QUEUE</h2>
 			<div className="homeQueue__grid">
-				<div
-					className="homeQueue__grid__next"
-					onClick={() => play(next, currentSong?.index + 1)}
-				>
+				<div className="homeQueue__grid__next" onClick={() => play(next, currentSong?.index + 1)}>
 					<div className="details">
 						<p>
 							Next <BiSkipNext />

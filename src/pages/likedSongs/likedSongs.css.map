@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AACC,WADU,CACV,mBAAmB,CAAC;EACnB,SAAS,EAAE,IAAI;EACf,eAAe,EAAE,YAAY;EAC7B,GAAG,EAAE,IAAI;CAUT;;AAdF,AAME,WANS,CACV,mBAAmB,GAKd,CAAC,CAAC;EACL,KAAK,EAAE,KAAK;EACZ,aAAa,EAAE,IAAI;EACnB,SAAS,EAAE,CAAC;CAIZ;;AAbH,AAUG,WAVQ,CACV,mBAAmB,GAKd,CAAC,CAIJ,GAAG,CAAC;EACH,MAAM,EAAE,KAAK;CACb",
-    "sources": [
-        "likedSongs.scss"
-    ],
-    "names": [],
-    "file": "likedSongs.css"
-}

@@ -4,7 +4,6 @@ import { BiSkipNext, BiSkipPrevious } from "react-icons/bi";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setCurrentSong, setPlaying } from "../../features/userSlice";
-import "./playerControls.css";
 
 const PlayerControls = () => {
 	const dispatch = useDispatch();

@@ -79,21 +79,7 @@
 				content: "";
 				position: absolute;
 				inset: 0;
-				background: linear-gradient(
-					269.56deg,
-					var(--accent) 67.1%,
-					rgba(254, 102, 58, 0) 99.57%
-				);
-			}
-
-			@media (max-width: 1000px) {
-				&::after {
-					background: linear-gradient(
-						269.56deg,
-						var(--accent) 45.1%,
-						rgba(254, 102, 58, 0) 99.57%
-					);
-				}
+				background: linear-gradient(to right, rgba(254, 102, 58, 0) 0px, var(--accent) 200px 100%);
 			}
 		}
 		@media (max-width: 800px) {
@@ -104,13 +90,6 @@
 			&__next {
 				grid-column: 1/4;
 				grid-row: 1/2;
-				&::after {
-					background: linear-gradient(
-						269.56deg,
-						var(--accent) 60.1%,
-						rgba(254, 102, 58, 0) 99.57%
-					);
-				}
 				.details {
 					right: 30px;
 				}

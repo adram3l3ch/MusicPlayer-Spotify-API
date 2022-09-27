@@ -1,5 +1,4 @@
 import React from "react";
-import "./info.css";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { SiGmail } from "react-icons/si";
 
@@ -11,25 +10,13 @@ const Info = () => {
 				<p>Developed and designed by</p>
 				<h3>ADARSH</h3>
 				<div className="links">
-					<a
-						href="https://linkedin.com/in/adram3l3ch"
-						target="_blank"
-						rel="noreferrer"
-					>
+					<a href="https://linkedin.com/in/adram3l3ch" target="_blank" rel="noreferrer">
 						<AiFillLinkedin />
 					</a>
-					<a
-						href="https://github.com/adram3l3ch"
-						target="_blank"
-						rel="noreferrer"
-					>
+					<a href="https://github.com/adram3l3ch" target="_blank" rel="noreferrer">
 						<AiFillGithub />
 					</a>
-					<a
-						href="mailto:adramelech.psd@gmail.com"
-						target="_blank"
-						rel="noreferrer"
-					>
+					<a href="mailto:adramelech.psd@gmail.com" target="_blank" rel="noreferrer">
 						<SiGmail />
 					</a>
 				</div>

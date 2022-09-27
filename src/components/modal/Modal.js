@@ -1,9 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import "./modal.css";
 
 const Modal = () => {
-	const { modal } = useSelector((state) => state.user);
+	const { modal } = useSelector(state => state.user);
 	return (
 		<div className={modal.visible ? "modal active" : "modal"}>
 			<h3>{modal.message}</h3>

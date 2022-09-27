@@ -1,3 +1,21 @@
+@import "../components/homeQueue/homeQueue";
+@import "../components/homeSection/homeSection";
+@import "../components/main/main";
+@import "../components/modal/modal";
+@import "../components/player/player";
+@import "../components/playerControls/playerControls";
+@import "../components/playerStatus/playerStatus";
+@import "../components/searchbar/searchbar";
+@import "../components/searchResult/searchResult";
+@import "../components/sectionCard/sectionCard";
+@import "../components/sidebar/sidebar";
+@import "../components/sidebarOption/sidebarOption";
+@import "../components/user/user";
+@import "../pages/info/info";
+@import "../pages/likedSongs/likedSongs";
+@import "../pages/login/login";
+@import "../pages/searchResultPage/searchResultPage";
+
 .app {
 	height: 100vh;
 	position: relative;

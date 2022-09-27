@@ -5,7 +5,6 @@ import HomeSection from "../homeSection/HomeSection";
 import Modal from "../modal/Modal";
 import Searchbar from "../searchbar/Searchbar";
 import User from "../user/User";
-import "./main.css";
 import { Switch, Route } from "react-router-dom";
 import LikedSongs from "../../pages/likedSongs/LikedSongs";
 import SearchResultPage from "../../pages/searchResultPage/SearchResultPage";
