@@ -24,7 +24,7 @@ const Main = ({ spotify }) => {
 					<Route exact path="/">
 						{topRated[currentSong?.index + 3] && <HomeQueue />}
 						<HomeSection title="MADE FOR YOU" lists={topRated} />
-						<HomeSection title="RECENTLY PLAYED" lists={recentlyPlayed} />
+						<HomeSection title="RECENTLY PLAYED" lists={recentlyPlayed} sm />
 					</Route>
 					<Route path="/likedsongs">
 						<LikedSongs />

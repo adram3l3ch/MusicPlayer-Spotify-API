@@ -1,13 +1,12 @@
 .likedSongs {
 	.homeSection__cards {
-		flex-wrap: wrap;
-		justify-content: space-around;
-		gap: 15px;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+		gap: 20px;
 
 		& > * {
-			width: 180px;
+			width: 100%;
 			margin-bottom: 20px;
-			flex-grow: 1;
 			img {
 				height: 180px;
 			}
