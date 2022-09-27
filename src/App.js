@@ -25,13 +25,14 @@ function App() {
 	useEffect(() => {
 		let _token;
 		_token = localStorage.getItem("token");
-		if (_token === "undefined") {
+		console.log(_token);
+		if (!_token || _token === "undefined") {
 			const hash = getToken();
 			window.location.hash = "";
 			_token = hash.access_token;
 			window.localStorage.setItem("token", _token);
 		}
-		if (_token) {
+		if (_token && _token !== "undefined") {
 			dispatch(setToken(_token));
 			spotify.setAccessToken(_token);
 			spotify.getMe().then(user => dispatch(setUser(user)));
