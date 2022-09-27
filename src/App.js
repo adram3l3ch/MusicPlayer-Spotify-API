@@ -23,10 +23,14 @@ function App() {
 	const { token, topRated, currentSong } = useSelector(state => state.user);
 	const dispatch = useDispatch();
 	useEffect(() => {
-		const hash = getToken();
-		window.location.hash = "";
-		const _token = hash.access_token;
-		window.localStorage.setItem("token", _token);
+		let _token;
+		_token = localStorage.getItem("token");
+		if (_token === "undefined") {
+			const hash = getToken();
+			window.location.hash = "";
+			_token = hash.access_token;
+			window.localStorage.setItem("token", _token);
+		}
 		if (_token) {
 			dispatch(setToken(_token));
 			spotify.setAccessToken(_token);
