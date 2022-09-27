@@ -77,4 +77,18 @@
 			right: 0;
 		}
 	}
+	@media (max-width: 400px) {
+		&__left {
+			img {
+				width: 40px;
+				height: 40px;
+			}
+			&__title {
+				font-size: 0.7rem;
+			}
+			&__artist {
+				font-size: 0.6rem;
+			}
+		}
+	}
 }
