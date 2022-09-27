@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 const Player = () => {
 	const { currentSong } = useSelector(state => state.user);
 	return (
-		<footer className="player">
+		<footer className={currentSong ? "player" : "player hidden"}>
 			<div className="player__left">
 				<img src={currentSong?.image} alt="" draggable="false" />
 				<div className="player__left__songInfo">

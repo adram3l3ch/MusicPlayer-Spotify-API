@@ -11,7 +11,6 @@ import {
 	setToken,
 	setTopRated,
 	setRecentlyPlayed,
-	setCurrentSong,
 	setLikedSongs,
 	setModal,
 	setPlaying,
@@ -20,7 +19,7 @@ import {
 const spotify = new SpotifyWebApi();
 
 function App() {
-	const { token, topRated, currentSong } = useSelector(state => state.user);
+	const { token, currentSong } = useSelector(state => state.user);
 	const dispatch = useDispatch();
 	useEffect(() => {
 		const hash = getToken();
@@ -40,12 +39,6 @@ function App() {
 			});
 		}
 	}, [dispatch]);
-
-	useEffect(() => {
-		if (topRated.length > 1) {
-			dispatch(setCurrentSong({ song: topRated[0], index: 0 }));
-		}
-	}, [topRated, dispatch]);
 
 	useEffect(() => {
 		if (/null/.test(currentSong?.ref?.src)) {

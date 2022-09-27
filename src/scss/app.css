@@ -128,7 +128,8 @@ h2 {
   margin-bottom: 30px;
 }
 .main__bottom {
-  height: calc(100% - 80px);
+  height: calc(100% - 10px);
+  padding-bottom: 80px;
   overflow: auto;
 }
 .main__bottom::-webkit-scrollbar {
@@ -166,7 +167,7 @@ h2 {
 
 .player {
   display: flex;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   height: 80px;
   background-color: var(--secondary);
@@ -177,6 +178,10 @@ h2 {
   box-shadow: 0px -1px 50px rgba(0, 0, 0, 0.75);
   color: var(--neutral);
   z-index: 9999;
+  transition: transform 0.3s ease-out;
+}
+.player.hidden {
+  transform: translateY(100%);
 }
 .player__left {
   display: flex;
@@ -393,7 +398,7 @@ h2 {
   background-color: aqua;
   position: absolute;
   top: 0;
-  bottom: 70px;
+  bottom: 0;
   width: 70px;
   background-color: var(--secondary);
   display: flex;
