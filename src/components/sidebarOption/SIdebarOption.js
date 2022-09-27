@@ -1,14 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { setActiveTab, setIsSearching, setSearchResults, setSearchTerm } from "../../features/userSlice";
+import { setActiveTab, setSearchResults, setSearchTerm } from "../../features/userSlice";
 
 const SIdebarOption = ({ Icon, title, index }) => {
 	const dispatch = useDispatch();
 	const { activeTab } = useSelector(state => state.user);
 	const active = activeTab === index;
 	const handler = () => {
-		dispatch(setIsSearching(false));
 		dispatch(setSearchTerm(""));
 		dispatch(setSearchResults([]));
 		dispatch(setActiveTab(index));

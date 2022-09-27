@@ -8,7 +8,6 @@ const initialState = {
 	searchTerm: "",
 	searchResults: [],
 	playing: false,
-	isSearching: false,
 	currentSong: null,
 	token: null,
 	activeTab: 0,
@@ -35,10 +34,7 @@ export const userSlice = createSlice({
 			const { song, index } = action.payload;
 			const image = song?.album.images[2]?.url;
 			const title = song?.name;
-			const artist = song?.artists.reduce(
-				(name, artist) => `${name && name + ","} ${artist.name}`,
-				""
-			);
+			const artist = song?.artists.reduce((name, artist) => `${name && name + ","} ${artist.name}`, "");
 			const url = song?.preview_url;
 			state.currentSong = {
 				index,
@@ -64,9 +60,6 @@ export const userSlice = createSlice({
 		setSearchResults: (state, action) => {
 			state.searchResults = action.payload;
 		},
-		setIsSearching: (state, action) => {
-			state.isSearching = action.payload;
-		},
 		setActiveTab: (state, action) => {
 			state.activeTab = action.payload;
 		},
@@ -85,7 +78,6 @@ export const {
 	setLikedSongs,
 	setSearchResults,
 	setSearchTerm,
-	setIsSearching,
 	setActiveTab,
 } = userSlice.actions;
 
