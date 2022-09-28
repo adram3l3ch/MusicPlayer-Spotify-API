@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
 	user: null,
 	topRated: [],
+	newReleases: [],
 	recentlyPlayed: [],
 	likedSongs: [],
 	searchTerm: "",
@@ -26,6 +27,9 @@ export const userSlice = createSlice({
 		},
 		setTopRated: (state, action) => {
 			state.topRated = action.payload;
+		},
+		setNewReleases: (state, action) => {
+			state.newReleases = [...state.newReleases, action.payload];
 		},
 		setRecentlyPlayed: (state, action) => {
 			state.recentlyPlayed = action.payload;
@@ -79,6 +83,7 @@ export const {
 	setSearchResults,
 	setSearchTerm,
 	setActiveTab,
+	setNewReleases,
 } = userSlice.actions;
 
 export default userSlice.reducer;
