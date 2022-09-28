@@ -11,10 +11,12 @@
 	box-shadow: 0px -1px 50px rgba(0, 0, 0, 0.75);
 	color: var(--neutral);
 	z-index: 9999;
-	transition: transform 0.3s ease-out;
+	transition: all 0.3s ease-out;
+	opacity: 1;
 
 	&.hidden {
 		transform: translateY(100%);
+		opacity: 0;
 	}
 
 	&__left {
