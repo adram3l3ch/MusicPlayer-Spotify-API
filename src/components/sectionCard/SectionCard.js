@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import { AiFillPlayCircle } from "react-icons/ai";
 import { setCurrentPlaylist, setCurrentSong, setPlaying } from "../../features/userSlice";
 
 const SectionCard = ({ song, songs, index, sm }) => {
@@ -23,6 +24,9 @@ const SectionCard = ({ song, songs, index, sm }) => {
 
 	return (
 		<div className="sectionCard" onClick={updateSong} style={style}>
+			<div className="overlay">
+				<AiFillPlayCircle />
+			</div>
 			<img src={image} alt="" />
 			<h3>{title}</h3>
 			<h4>{artist}</h4>
