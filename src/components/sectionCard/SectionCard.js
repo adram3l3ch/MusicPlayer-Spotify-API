@@ -1,9 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { setCurrentSong, setPlaying } from "../../features/userSlice";
+import { setCurrentPlaylist, setCurrentSong, setPlaying } from "../../features/userSlice";
 
-const SectionCard = ({ song, index, sm }) => {
+const SectionCard = ({ song, songs, index, sm }) => {
 	const dispatch = useDispatch();
 	const { currentSong, playing } = useSelector(state => state.user);
 	const image = song.album ? song.album.images[0]?.url : song.images[0]?.url;
@@ -17,6 +17,7 @@ const SectionCard = ({ song, index, sm }) => {
 	const updateSong = () => {
 		if (playing) currentSong?.ref?.pause();
 		dispatch(setPlaying(false));
+		dispatch(setCurrentPlaylist(songs));
 		dispatch(setCurrentSong({ song, index }));
 	};
 

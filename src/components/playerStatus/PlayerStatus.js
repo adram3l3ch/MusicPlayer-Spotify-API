@@ -4,7 +4,7 @@ import { setCurrentSong, setPlaying } from "../../features/userSlice";
 
 let interval;
 const PlayerStatus = () => {
-	const { playing, currentSong, topRated } = useSelector(state => state.user);
+	const { playing, currentSong, currentPlaylist } = useSelector(state => state.user);
 	const dispatch = useDispatch();
 	const [time, setTime] = useState(0);
 	const updateTime = () => {
@@ -23,7 +23,8 @@ const PlayerStatus = () => {
 	useEffect(() => {
 		if (parseInt(time) === parseInt(currentSong?.ref.duration)) {
 			dispatch(setPlaying(false));
-			const song = topRated[currentSong.index + 1];
+			let song = currentPlaylist[currentSong.index + 1];
+			song = song?.track || song;
 			dispatch(setCurrentSong({ song, index: currentSong.index + 1 }));
 		}
 		// eslint-disable-next-line

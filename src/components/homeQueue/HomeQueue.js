@@ -4,10 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { setCurrentSong, setPlaying } from "../../features/userSlice";
 
 const HomeQueue = () => {
-	const { currentSong, topRated } = useSelector(state => state.user);
-	const next = topRated[currentSong?.index + 1];
-	const third = topRated[currentSong?.index + 2];
-	const fourth = topRated[currentSong?.index + 3];
+	const { currentSong, currentPlaylist } = useSelector(state => state.user);
+	let next = currentPlaylist[currentSong?.index + 1];
+	let third = currentPlaylist[currentSong?.index + 2];
+	let fourth = currentPlaylist[currentSong?.index + 3];
+	next = next?.track || next;
+	third = third?.track || third;
+	fourth = fourth?.track || fourth;
 	const dispatch = useDispatch();
 
 	const play = (song, index) => {

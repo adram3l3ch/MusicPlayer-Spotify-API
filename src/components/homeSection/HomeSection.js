@@ -7,7 +7,7 @@ const HomeSection = ({ title, lists, sm }) => {
 			<h2>{title}</h2>
 			<div className="homeSection__cards">
 				{lists?.map((song, index) => (
-					<SectionCard song={song.track || song} index={index} key={index} sm={sm} />
+					<SectionCard song={song.track || song} index={index} key={index} sm={sm} songs={lists} />
 				))}
 			</div>
 		</div>

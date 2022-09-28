@@ -4,6 +4,7 @@ const initialState = {
 	user: null,
 	topRated: [],
 	newReleases: [],
+	currentPlaylist: [],
 	recentlyPlayed: [],
 	likedSongs: [],
 	searchTerm: "",
@@ -67,6 +68,9 @@ export const userSlice = createSlice({
 		setActiveTab: (state, action) => {
 			state.activeTab = action.payload;
 		},
+		setCurrentPlaylist: (state, action) => {
+			state.currentPlaylist = action.payload;
+		},
 	},
 });
 
@@ -84,6 +88,7 @@ export const {
 	setSearchTerm,
 	setActiveTab,
 	setNewReleases,
+	setCurrentPlaylist,
 } = userSlice.actions;
 
 export default userSlice.reducer;

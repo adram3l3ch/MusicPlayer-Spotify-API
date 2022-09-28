@@ -7,7 +7,7 @@ import { setCurrentSong, setPlaying } from "../../features/userSlice";
 
 const PlayerControls = () => {
 	const dispatch = useDispatch();
-	const { playing, currentSong, topRated } = useSelector(state => state.user);
+	const { playing, currentSong, currentPlaylist } = useSelector(state => state.user);
 
 	const play = () => {
 		if (!/null/.test(currentSong?.ref?.src))
@@ -24,7 +24,8 @@ const PlayerControls = () => {
 		if (currentSong) {
 			if (playing) currentSong?.ref?.pause();
 			dispatch(setPlaying(false));
-			const song = topRated[currentSong.index + value];
+			let song = currentPlaylist[currentSong.index + value];
+			song = song?.track || song;
 			const index = currentSong.index + value;
 			if (song) {
 				dispatch(setCurrentSong({ song, index }));
