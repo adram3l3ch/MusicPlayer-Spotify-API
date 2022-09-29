@@ -1,15 +1,12 @@
 import React from "react";
 import { AiFillPlayCircle } from "react-icons/ai";
-import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setCurrentSong, setPlaying } from "../../features/userSlice";
 
 const SearchResult = ({ song }) => {
-	const { playing, currentSong } = useSelector(state => state.user);
 	const dispatch = useDispatch();
 	const index = Math.floor(Math.random() * 20);
 	const play = () => {
-		if (playing) currentSong?.ref?.pause();
 		dispatch(setPlaying(false));
 		dispatch(setCurrentSong({ song, index }));
 	};

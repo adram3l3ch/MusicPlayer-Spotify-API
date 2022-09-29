@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai";
 import { BiSkipNext, BiSkipPrevious } from "react-icons/bi";
 import { useSelector } from "react-redux";
@@ -10,31 +10,28 @@ const PlayerControls = () => {
 	const { playing, currentSong, currentPlaylist } = useSelector(state => state.user);
 
 	const play = () => {
-		if (!/null/.test(currentSong?.ref?.src))
-			if (playing) {
-				currentSong.ref.pause();
-				dispatch(setPlaying(false));
-			} else {
-				currentSong.ref.play();
-				dispatch(setPlaying(true));
-			}
+		if (!/null/.test(currentSong?.ref?.src)) dispatch(setPlaying(!playing));
 	};
 
 	const nextOrPrev = value => {
-		if (currentSong) {
-			if (playing) currentSong?.ref?.pause();
-			dispatch(setPlaying(false));
-			let song = currentPlaylist[currentSong.index + value];
-			song = song?.track || song;
-			const index = currentSong.index + value;
-			if (song) {
-				dispatch(setCurrentSong({ song, index }));
-			}
-		}
+		dispatch(setPlaying(false));
+		let song = currentPlaylist[currentSong.index + value];
+		song = song?.track || song;
+		const index = currentSong.index + value;
+		if (song) dispatch(setCurrentSong({ song, index }));
 	};
 
-	// currentSong?.ref.addEventListener("play", () => dispatch(setPlaying(true)));
-	// currentSong?.ref.addEventListener("pause", () => dispatch(setPlaying(false)));
+	useEffect(() => {
+		const play = () => dispatch(setPlaying(true));
+		const pause = () => dispatch(setPlaying(false));
+		currentSong?.ref.addEventListener("play", play);
+		currentSong?.ref.addEventListener("pause", pause);
+
+		return () => {
+			currentSong?.ref.removeEventListener("play", play);
+			currentSong?.ref.removeEventListener("pause", pause);
+		};
+	}, [currentSong, dispatch]);
 
 	return (
 		<div className="playerControls">

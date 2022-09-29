@@ -14,7 +14,6 @@ const HomeQueue = () => {
 	const dispatch = useDispatch();
 
 	const play = (song, index) => {
-		currentSong?.ref?.pause();
 		dispatch(setPlaying(false));
 		dispatch(setCurrentSong({ song, index }));
 	};

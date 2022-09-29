@@ -48,19 +48,9 @@ function App() {
 					visible: true,
 				})
 			);
-			setTimeout(
-				() =>
-					dispatch(
-						setModal({
-							message: "",
-							visible: false,
-						})
-					),
-				5000
-			);
+			setTimeout(() => dispatch(setModal({ message: "", visible: false })), 5000);
 			dispatch(setPlaying(false));
 		} else if (currentSong?.ref?.src) {
-			currentSong?.ref?.play();
 			dispatch(setPlaying(true));
 		}
 	}, [currentSong, dispatch]);

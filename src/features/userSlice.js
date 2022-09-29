@@ -51,6 +51,8 @@ export const userSlice = createSlice({
 			};
 		},
 		setPlaying: (state, action) => {
+			if (action.payload) state.currentSong?.ref.play();
+			else state.currentSong?.ref.pause();
 			state.playing = action.payload;
 		},
 		setModal: (state, action) => {
