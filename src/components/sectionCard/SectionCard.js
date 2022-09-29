@@ -5,7 +5,7 @@ import { setCurrentPlaylist, setCurrentSong, setPlaying } from "../../features/u
 
 const SectionCard = ({ song, songs, index, sm }) => {
 	const dispatch = useDispatch();
-	const image = song.album ? song.album.images[1]?.url : song.images[1]?.url;
+	const image = song.album ? song.album.images?.[1]?.url : song.images?.[1]?.url;
 	const title = song.name;
 	const artist = song.artists.reduce((name, artist) => `${name && name + ","} ${artist.name}`, "");
 
