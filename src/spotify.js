@@ -1,6 +1,6 @@
 const endpoint = "https://accounts.spotify.com/authorize";
-// const redirectURI = "https://musicplayer-spotify-api.netlify.app/";
-const redirectURI = "http://localhost:3000/";
+const redirectURI = "https://musicplayer-spotify-api.netlify.app/";
+// const redirectURI = "http://localhost:3000/";
 const clientID = "070587934141491eba9e3c76e9d4c15c";
 
 const scopes = [
