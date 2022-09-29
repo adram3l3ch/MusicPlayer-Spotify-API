@@ -7,7 +7,7 @@ import { setCurrentPlaylist, setCurrentSong, setPlaying } from "../../features/u
 const SectionCard = ({ song, songs, index, sm }) => {
 	const dispatch = useDispatch();
 	const { currentSong, playing } = useSelector(state => state.user);
-	const image = song.album ? song.album.images[0]?.url : song.images[0]?.url;
+	const image = song.album ? song.album.images[1]?.url : song.images[1]?.url;
 	const title = song.name;
 	const artist = song.artists.reduce((name, artist) => `${name && name + ","} ${artist.name}`, "");
 
@@ -27,7 +27,7 @@ const SectionCard = ({ song, songs, index, sm }) => {
 			<div className="overlay">
 				<AiFillPlayCircle />
 			</div>
-			<img src={image} alt="" />
+			<img src={image} alt="" loading="lazy" />
 			<h3>{title}</h3>
 			<h4>{artist}</h4>
 		</div>
