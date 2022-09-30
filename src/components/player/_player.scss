@@ -3,7 +3,8 @@
 	position: fixed;
 	bottom: 0;
 	height: 80px;
-	background-color: var(--secondary);
+	background-color: rgba($color: #000000, $alpha: 0.4);
+	backdrop-filter: blur(50px);
 	width: 100%;
 	padding: 5px 40px 5px 20px;
 	display: flex;
@@ -14,6 +15,17 @@
 	transition: all 0.3s ease-out;
 	opacity: 1;
 
+	&::after {
+		position: absolute;
+		content: "";
+		width: 100%;
+		height: 2px;
+		top: 0;
+		left: 0;
+		background: linear-gradient(to right, transparent, white, transparent);
+		z-index: -1;
+		opacity: 0.3;
+	}
 	&.hidden {
 		transform: translateY(100%);
 		opacity: 0;

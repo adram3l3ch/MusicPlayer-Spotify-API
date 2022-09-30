@@ -119,7 +119,17 @@ h2 {
   padding: 50px 50px 70px 120px;
   color: aliceblue;
   height: 100vh;
-  background-color: var(--primary);
+  background: linear-gradient(150deg, var(--primary) 40%, var(--theme));
+  position: relative;
+  isolation: isolate;
+}
+.main::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(150deg, transparent, var(--primary) 50%);
+  opacity: 0.6;
 }
 .main__top {
   display: flex;
@@ -170,7 +180,9 @@ h2 {
   position: fixed;
   bottom: 0;
   height: 80px;
-  background-color: var(--secondary);
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
   width: 100%;
   padding: 5px 40px 5px 20px;
   display: flex;
@@ -180,6 +192,17 @@ h2 {
   z-index: 9999;
   transition: all 0.3s ease-out;
   opacity: 1;
+}
+.player::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, transparent, white, transparent);
+  z-index: -1;
+  opacity: 0.3;
 }
 .player.hidden {
   transform: translateY(100%);

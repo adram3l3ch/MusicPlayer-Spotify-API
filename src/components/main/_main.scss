@@ -3,7 +3,18 @@
 	padding: 50px 50px 70px 120px;
 	color: aliceblue;
 	height: 100vh;
-	background-color: var(--primary);
+	background: linear-gradient(150deg, var(--primary) 40%, var(--theme));
+	position: relative;
+	isolation: isolate;
+
+	&::after {
+		position: absolute;
+		content: "";
+		inset: 0;
+		z-index: -1;
+		background: linear-gradient(150deg, transparent, var(--primary) 50%);
+		opacity: 0.6;
+	}
 
 	&__top {
 		display: flex;

@@ -6,6 +6,7 @@ import { getToken } from "./spotify";
 import SpotifyWebApi from "spotify-web-api-js";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import extractColors from "extract-colors";
 import {
 	setUser,
 	setToken,
@@ -15,11 +16,13 @@ import {
 	setModal,
 	setPlaying,
 } from "./features/userSlice";
+import { useState } from "react";
 
 const spotify = new SpotifyWebApi();
 
 function App() {
 	const { token, currentSong } = useSelector(state => state.user);
+	const [theme, setTheme] = useState("var(--primary)");
 	const dispatch = useDispatch();
 	useEffect(() => {
 		const hash = getToken();
@@ -41,6 +44,23 @@ function App() {
 	}, [dispatch]);
 
 	useEffect(() => {
+		if (currentSong) {
+			var img = new Image();
+			img.crossOrigin = "Anonymous";
+			img.onload = function () {
+				var canvas = document.createElement("CANVAS");
+				var ctx = canvas.getContext("2d");
+				var dataURL;
+				canvas.height = this.naturalHeight;
+				canvas.width = this.naturalWidth;
+				ctx.drawImage(this, 0, 0);
+				dataURL = canvas.toDataURL();
+				extractColors(dataURL)
+					.then(resp => setTheme(resp[0]?.hex || "var(--primary)"))
+					.catch(console.error);
+			};
+			img.src = currentSong.image;
+		}
 		if (/null/.test(currentSong?.ref?.src)) {
 			dispatch(
 				setModal({
@@ -55,7 +75,15 @@ function App() {
 		}
 	}, [currentSong, dispatch]);
 
-	return <div className="app">{token ? <Home spotify={spotify} /> : <Login />}</div>;
+	const style = {
+		"--theme": theme,
+	};
+
+	return (
+		<div className="app" style={style}>
+			{token ? <Home spotify={spotify} /> : <Login />}
+		</div>
+	);
 }
 
 export default App;
