@@ -39,6 +39,7 @@ export const userSlice = createSlice({
 			const { song, index } = action.payload;
 			const image = song?.album.images[2]?.url;
 			const title = song?.name;
+			const id = song?.id;
 			const artist = song?.artists.reduce((name, artist) => `${name && name + ","} ${artist.name}`, "");
 			const url = song?.preview_url;
 			state.currentSong = {
@@ -46,6 +47,7 @@ export const userSlice = createSlice({
 				title,
 				artist,
 				url,
+				id,
 				image,
 				ref: new Audio(url),
 			};

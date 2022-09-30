@@ -23,7 +23,8 @@
 		transition: opacity 0.2s ease;
 	}
 
-	&:hover .overlay {
+	&:hover .overlay,
+	.visible.overlay {
 		opacity: 1;
 	}
 

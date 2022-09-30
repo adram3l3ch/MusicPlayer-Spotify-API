@@ -401,7 +401,8 @@ h2 {
   opacity: 0;
   transition: opacity 0.2s ease;
 }
-.sectionCard:hover .overlay {
+.sectionCard:hover .overlay,
+.sectionCard .visible.overlay {
   opacity: 1;
 }
 .sectionCard h3 {
