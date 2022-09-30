@@ -37,6 +37,7 @@ export const userSlice = createSlice({
 		},
 		setCurrentSong: (state, action) => {
 			const { song, index } = action.payload;
+			if (!song) return { ...state, currentSong: null };
 			const image = song?.album.images[2]?.url;
 			const title = song?.name;
 			const id = song?.id;
