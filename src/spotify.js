@@ -3,7 +3,7 @@ const redirectURI =
 	process.env.NODE_ENV === "development"
 		? "http://localhost:3000/"
 		: "https://musicplayer-spotify-api.netlify.app/";
-const clientID = process.env.REACT_APP_CLIENT_ID;
+const clientID = "070587934141491eba9e3c76e9d4c15c";
 
 const scopes = [
 	"streaming",
