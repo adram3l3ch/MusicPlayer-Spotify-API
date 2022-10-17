@@ -1,0 +1,10 @@
+.lyrics {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 90%;
+	p {
+		text-align: center;
+		line-height: 2em;
+	}
+}

@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
 	user: null,
@@ -12,9 +12,20 @@ const initialState = {
 	playing: false,
 	currentSong: null,
 	token: null,
+	lyrics: { loading: false, data: "" },
 	activeTab: 0,
 	modal: { message: "", visible: false },
 };
+
+export const fetchLyrics = createAsyncThunk("user/fetchLyrics", async (_, thunkApi) => {
+	const { getState } = thunkApi;
+	const { artist, title } = getState().user.currentSong;
+	const data = await fetch(
+		`https://lyrics-finder-ubi6.onrender.com/lyrics?artist=${artist.split(",")[0]?.trim()}&title=${title}`
+	);
+	const resp = await data.json();
+	return resp;
+});
 
 export const userSlice = createSlice({
 	name: "user",
@@ -75,6 +86,19 @@ export const userSlice = createSlice({
 		},
 		setCurrentPlaylist: (state, action) => {
 			state.currentPlaylist = action.payload;
+		},
+	},
+	extraReducers: {
+		[fetchLyrics.pending]: (state, action) => {
+			state.lyrics.loading = true;
+		},
+		[fetchLyrics.fulfilled]: (state, action) => {
+			state.lyrics.loading = false;
+			state.lyrics.data = action.payload.lyrics;
+		},
+		[fetchLyrics.rejected]: (state, action) => {
+			state.lyrics.loading = false;
+			state.lyrics.data = "Something went wrong...";
 		},
 	},
 });

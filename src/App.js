@@ -15,6 +15,7 @@ import {
 	setLikedSongs,
 	setModal,
 	setPlaying,
+	fetchLyrics,
 } from "./features/userSlice";
 import { useState } from "react";
 
@@ -60,6 +61,7 @@ function App() {
 					.catch(console.error);
 			};
 			img.src = currentSong.image;
+			dispatch(fetchLyrics());
 		}
 		if (/null/.test(currentSong?.ref?.src)) {
 			dispatch(

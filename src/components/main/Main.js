@@ -10,6 +10,7 @@ import LikedSongs from "../../pages/likedSongs/LikedSongs";
 import SearchResultPage from "../../pages/searchResultPage/SearchResultPage";
 import Info from "../../pages/info/Info";
 import { setNewReleases } from "../../features/userSlice";
+import Lyrics from "../../pages/lyrics/Lyrics";
 
 const Main = ({ spotify }) => {
 	const dispatch = useDispatch();
@@ -45,6 +46,9 @@ const Main = ({ spotify }) => {
 						{newReleases.map(tracks => (
 							<HomeSection title={tracks.name} lists={tracks.tracks} sm key={tracks.name} />
 						))}
+					</Route>
+					<Route path="/lyrics">
+						<Lyrics />
 					</Route>
 					<Route path="/likedsongs">
 						<LikedSongs />

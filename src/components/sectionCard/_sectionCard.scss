@@ -11,8 +11,8 @@
 	}
 	.overlay {
 		position: absolute;
-		inset: 0;
-		height: var(--width);
+		width: 100%;
+		aspect-ratio: 1;
 		font-size: 4rem;
 		color: var(--accent);
 		border-radius: 10px;
