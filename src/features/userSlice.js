@@ -21,7 +21,9 @@ export const fetchLyrics = createAsyncThunk("user/fetchLyrics", async (_, thunkA
 	const { getState } = thunkApi;
 	const { artist, title } = getState().user.currentSong;
 	const data = await fetch(
-		`https://lyrics-finder-ubi6.onrender.com/lyrics?artist=${artist.split(",")[0]?.trim()}&title=${title}`
+		`https://lyrics-finder-production.up.railway.app/lyrics?artist=${artist
+			.split(",")[0]
+			?.trim()}&title=${title}`
 	);
 	const resp = await data.json();
 	return resp;
