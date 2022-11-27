@@ -9,7 +9,7 @@ It is a music player built using the spotify web API. You can search for any son
 ### Links
 
 -   Solution URL: [Github](https://github.com/adram3l3ch/MusicPlayer-Spotify-API)
--   Live Site URL: [Netlify](https://musicplayer-spotify-api.netlify.app/)
+-   Live Site URL: [Netlify](https://adra-zene.netlify.app/)
 
 ### Built with
 
